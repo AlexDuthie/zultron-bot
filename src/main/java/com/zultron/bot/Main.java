@@ -7,11 +7,11 @@ import javax.security.auth.login.LoginException;
 
 public class Main {
 
-    private static JDABuilder zultron;
+    private static final String token = "ODk3MTYxODM1OTUyODY5NDU3.YWRpEg.3or-HNLoME2VFnSCTcrzgwJrTnM";
 
     public static void main(String[] args) {
 
-        zultron = JDABuilder.createDefault("ODk3MTYxODM1OTUyODY5NDU3.YWRpEg.BWK2vILRrGkJDnZ59GlsmyEwNsc");
+        JDABuilder zultron = JDABuilder.createDefault(token);
 
         zultron.setStatus(OnlineStatus.ONLINE);
 
