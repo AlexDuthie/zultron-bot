@@ -1,16 +1,11 @@
-package com.zultron.bot;
+package com.zultron.bot.main;
 
-import net.dv8tion.jda.api.JDABuilder;
-import net.dv8tion.jda.api.OnlineStatus;
-import net.dv8tion.jda.api.entities.MessageReaction;
-import net.dv8tion.jda.api.entities.TextChannel;
-import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
-import net.dv8tion.jda.api.events.message.guild.react.GuildMessageReactionAddEvent;
+import com.zultron.bot.command.Help;
+import com.zultron.bot.command.Private;
+import net.dv8tion.jda.api.*;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import org.jetbrains.annotations.NotNull;
 
 import javax.security.auth.login.LoginException;
-import java.util.Arrays;
 
 public class Main extends ListenerAdapter {
 
@@ -22,7 +17,7 @@ public class Main extends ListenerAdapter {
 
         zultron.setStatus(OnlineStatus.ONLINE);
 
-        zultron.addEventListeners(new Main());
+        zultron.addEventListeners(new Private());
 
         try {
             zultron.build();
@@ -31,7 +26,5 @@ public class Main extends ListenerAdapter {
         }
 
     }
-
-    
 
 }
