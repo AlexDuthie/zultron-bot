@@ -2,6 +2,8 @@ package com.zultron.bot;
 
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
+import net.dv8tion.jda.api.entities.MessageReaction;
+import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.guild.react.GuildMessageReactionAddEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -30,16 +32,6 @@ public class Main extends ListenerAdapter {
 
     }
 
-    @Override
-    public void onGuildMessageReceived(@NotNull GuildMessageReceivedEvent event) {
-        String[] message = event.getMessage().getContentRaw().split(" ");
-        System.out.println(Arrays.toString(message));
-
-        if(message[0].equals("z!")) {
-            if(message[1].equals("help")) {
-                event.getChannel().sendMessage("I'm not helping YOU BOI").queue();
-            }
-        }
-    }
+    
 
 }
