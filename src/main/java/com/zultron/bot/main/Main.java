@@ -1,7 +1,6 @@
 package com.zultron.bot.main;
 
-import com.zultron.bot.command.Help;
-import com.zultron.bot.command.Private;
+import com.zultron.bot.command.PrivateMessage;
 import net.dv8tion.jda.api.*;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -17,7 +16,7 @@ public class Main extends ListenerAdapter {
 
         zultron.setStatus(OnlineStatus.ONLINE);
 
-        zultron.addEventListeners(new Private());
+        zultron.addEventListeners(new PrivateMessage());
 
         try {
             zultron.build();
